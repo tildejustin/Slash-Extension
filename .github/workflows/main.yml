@@ -1,0 +1,25 @@
+name: Slash Focus
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - v**
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3.5.1
+    - name: Install dependencies
+      run: |
+        npm install web-ext
+    - name: run build
+      run: |
+        web-ext build
+    - name: release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: web-ext-artifacts/**.zip
+        draft: true
