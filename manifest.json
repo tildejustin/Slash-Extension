@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "SlashFocus",
+    "version": "0.0.1",
+    "description": "Focuses website seachbars on slash. This only supports jisho and twitch for now, but I'm looking to expand support to more websites.",
+    "icons": {
+        "48": "ico48.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.jisho.org/*",
+                "*://*.twitch.tv/*"
+            ],
+            "js": [
+                "run.js"
+            ]
+        }
+    ]
+}
