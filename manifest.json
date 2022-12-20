@@ -16,5 +16,12 @@
                 "run.js"
             ]
         }
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "tildejustin@slashfocus",
+          "strict_min_version": "100.0"
+        }
+      }
+      
 }
